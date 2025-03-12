@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Git docs</title>
+		<link rel="stylesheet" href="blame.css" />
+	</head>
+	<body>
+		<div class="container py-4 prose">
+			<a href="/">Retour à l'index</a>
+		</div>
+		<div class="container py-4 prose">
+			<section>
+				<h1><code>git blame</code></h1>
+				<p>
+					Blame permet d'annoter chaque ligne d'un fichier donné avec les informations du
+					dernier commit (dit de la dernière révision) qui a modifié celle-ci.
+				</p>
+				<h2>Utilisation par défaut</h2>
+				<pre><code>git blame &lt;fichier&gt;</code></pre>
+				<h4>Sortie</h4>
+				<pre><code>557d325b (John Doe   Tue Mar 2 15:09    1) function factorial(n) {
+f8aabf49 (Jane Smith Sat 16:55          2)   if (n &lt; 0) {
+f8aabf49 (Jane Smith Sat 16:55          3)     throw new Error("Input must be a non-negative integer.");
+f8aabf49 (Jane Smith Sat 16:55          4)   }
+7b0531bc (John Doe   Tue Mar 4 13:45    5)   if (n === 0 || n === 1) {
+7b0531bc (John Doe   Tue Mar 4 13:45    6)     return 1;
+7b0531bc (John Doe   Tue Mar 4 13:45    7)   }
+<span class="truncated"></span></code></pre>
+				<h2>Options utiles</h2>
+				<h3><code>-L &lt;début&gt;,&lt;fin&gt;</code></h3>
+				<p>
+					N'annoter que la plage de lignes donnée entre
+					<code>&lt;début&gt;,&lt;fin&gt;</code>
+					donné. Cette option peut être spécifié plusieurs fois avec plusieurs plages, qui
+					peuvent également se chevaucher.
+				</p>
+				<p>
+					<code>&lt;début&gt;</code>
+					et
+					<code>&lt;fin&gt;</code>
+					peuvent prendre les formes suivantes:
+				</p>
+				<ul style="list-style: disc; padding-left: 1.5rem">
+					<li>Nombre : ligne absolue</li>
+					<li>
+						Offset : n'est valable que pour
+						<code>&lt;fin&gt;</code>, et spécifiera un nombre de lignes
+						avant ou après la ligne donnée par <code>&lt;début&gt;</code>
+					</li>
+					<li><code>/regex/</code> : Cette forme utilisera la première ligne correspondant au <a href="https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re" target="_blank">regex POSIX</a> donnée.</li>
+				</ul>
+				<h3><code>--color-by-age</code></h3>
+				<p>
+					Permet de colorer les annotations avec des couleurs en fonction de l'âge du
+					commit modifiant celle-ci.
+				</p>
+				<p>
+					Les couleurs peuvent être changées avec l'entrée de configuration
+					<code>color.blame.highlightRecent</code>
+					de git.
+					<br />
+					Par exemple
+				</p>
+				<pre><code>git config --add color.blame.highlightRecent "231, 3 months ago, 226, 1 month ago, 220, 3 weeks ago, 214,  1 week ago, 208, 3 days ago, 202, 1 day ago, 196"</code></pre>
+				<p>permet la coloration suivante :</p>
+				<pre
+					class="dark-mode"
+				><code><span style="color:#ff8700">557d325b (John Doe   Tue Mar 2 15:09    1)</span> function factorial(n) {
+<span style="color:#ff5f00">f8aabf49 (Jane Smith Sat 16:55          2)</span>   if (n &lt; 0) {
+<span style="color:#ff5f00">f8aabf49 (Jane Smith Sat 16:55          3)</span>     throw new Error("Input must be a non-negative integer.");
+<span style="color:#ff5f00">f8aabf49 (Jane Smith Sat 16:55          4)</span>   }
+<span style="color:#ffaf00">7b0531bc (John Doe   Tue Mar 4 13:45    5)</span>   if (n === 0 || n === 1) {
+<span style="color:#ffaf00">7b0531bc (John Doe   Tue Mar 4 13:45    6)</span>     return 1;
+<span style="color:#ffaf00">7b0531bc (John Doe   Tue Mar 4 13:45    7)</span>   }
+<span class="truncated"></span></code></pre>
+				<p>
+					(Les numéros sont des code
+					<a href="https://en.wikipedia.org/wiki/ANSI_escape_code#8-bit" target="_blank">couleur ANSI</a>
+					)
+				</p>
+				<h3><code>-l</code></h3>
+				<p class="text-muted doc-default">Désactivé par défaut</p>
+				<p>Affiche le hash du commit au format long.</p>
+				<h3>
+					<code>-e</code>,<code>--show-email</code>
+				</h3>
+				<p class="text-muted doc-default">Désactivé par défaut</p>
+				<p>Affiche l'email de l'auteur à place de son nom.</p>
+				<hr />
+				<p><a href="https://git-scm.com/docs/git-blame/fr">Voir plus de documentation</a></p>
+			</section>
+		</div>
+	</body>
+</html>
