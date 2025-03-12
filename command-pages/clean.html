@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Git Clean</title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="clean.css" /> <!-- Lien vers le fichier CSS -->
+</head>
+<body>
+<header>
+	<div class="header-container">
+		<a class="home-link" href="../index.html">Accueil</a>
+	</div>
+</header>
+<main>
+	<div class="container">
+		<h1>Commande git clean</h1>
+		<h2>Nom</h2>
+		<p>git clean - Supprime les fichiers non suivis de l'espace de travail</p>
+		<h2>Synopsis</h2>
+		<pre><code>git clean [-d] [-f] [-i] [-n] [-q] [-e &lt;pattern&gt;] [-x | -X] [--] &lt;path&gt;…​</code></pre>
+		<h2>Description</h2>
+		<p>Nettoie l'espace de travail en supprimant récursivement les fichiers qui ne sont pas sous gestion de version, en commençant par le répertoire courant.
+			Normalement, seuls les fichiers inconnus de Git sont supprimés, mais si l'option -x est spécifiée, les fichiers ignorés sont également supprimés.
+			Si des arguments optionnels &lt;path&gt;…​ sont donnés, seuls les chemins qui correspondent à la spécification de chemin sont affectés.
+		</p>
+		<h2>Options</h2>
+		<ul>
+			<li><code>-d</code> : Normalement, quand aucun &lt;path&gt; n'est spécifié, git clean n'ira pas dans les répertoires non suivis pour éviter d'en supprimer trop. Spécifiez -d pour qu'il se rende également dans ces répertoires. Si un &lt;path&gt; est spécifié, -d n'a pas d'importance ; tous les fichiers non suivis correspondant aux chemins spécifiés (avec des exceptions pour les répertoires git imbriqués mentionnés sous --force) seront supprimés.</li>
+			<li><code>-f</code> : Si la variable de configuration Git <code>clean.requireForce</code> n'est pas définie à false, git clean refusera de supprimer des fichiers ou des répertoires à moins que l'option -f ne soit donnée. Git refusera de modifier les dépôts git imbriqués non suivis (répertoires avec un sous-répertoire .git) à moins qu'un second -f ne soit donné.</li>
+			<li><code>-i</code> : Montre ce qui serait fait et permet de nettoyer les fichiers de manière interactive. La variable de configuration <code>clean.requireForce</code> est ignorée, car ce mode offre sa propre protection en devenant interactif.</li>
+			<li><code>-n</code> : Ne supprime rien, montre simplement ce qui serait fait. La variable de configuration <code>clean.requireForce</code> est ignorée, car rien ne sera supprimé de toute façon.</li>
+			<li><code>-q</code> : Ne signale que les erreurs, mais pas les fichiers qui ont été supprimés avec succès.</li>
+			<li><code>-e &lt;pattern&gt;</code> : Utilise le motif d'exclusion donné en plus des règles d'ignorance standard (voir gitignore[5]).</li>
+			<li><code>-x</code> : N'utilise pas les règles d'ignorance standard (voir gitignore[5]), mais utilise les règles d'ignorance données avec les options -e de la ligne de commande. Cela permet de supprimer tous les fichiers non suivis, y compris les fichiers créés par le build. Cela peut être utilisé (éventuellement en conjonction avec git restore ou git reset) pour créer un répertoire de travail vierge afin de tester une compilation propre.</li>
+			<li><code>-X</code> : Supprime uniquement les fichiers ignorés par Git. Cela peut être utile pour tout reconstruire à partir de zéro, mais en conservant les fichiers créés manuellement.</li>
+		</ul>
+	</div>
+</main>
+</body>
+</html>
