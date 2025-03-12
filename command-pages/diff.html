@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation commandes avancées Git - Index</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a class="home-link" href="index.html">Accueil</a>
+        </div>
+    </header>
+    <main>
+        <h1>git diff</h1>
+        <h2>git diff [options] [commit] [--] [path...]</h2>
+        <p>Comparaison des changements entre le working tree / répertoire de travail et l'index, qui ne sont pas encore
+            staged.</p>
+        </br></br>
+        <h2>git diff HEAD</h2>
+        <p>Comparaison des changements du working tree avec le référentiel par rapport au dernier commit.</p>
+        </br></br>
+        <h2>git diff --staged | git diff --cached</h2>
+        <p>Comparaison de la zone de staging et le dépôt principal, distant, référentiel.</p>
+        </br></br>
+        <h2>git diff --stat</h2>
+        <p>Comparaison des fichiers entre le working tree et le référentiel, affichage limité avec en sortie les noms
+            des fichiers changés ainsi qu'un graphe.</p>
+        </br></br>
+        <h2>git diff [commit1]</h2>
+        <p>Comparaison avec le commit indiqué.</p>
+        </br></br>
+        <h2>git diff [commit1] [commit2]</h2>
+        <p>Comparaison entre deux commits indiqués. Nécesssite l'ID du commit (git log).</p>
+        </br></br>
+        <h2>git diff [branche1]</h2>
+        <p>Comparaison avec la branche indiquée et celle actuelle.</p>
+        </br></br>
+        <h2>git diff [branche1] [branche2]</h2>
+        <p>Comparaison avec les deux branches indiquées.</p>
+
+    </main>
+</body>
+
+</html>
