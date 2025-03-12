@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation commandes avancées Git - git stash</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <header>
+        <div class="header-container">
+          <a class="home-link" href="../index.html">Accueil</a>
+        </div>
+      </header>
+      <main id="stashMain">
+        <h1>git stash</h1>
+        <p>Sauvegarde temporairement les modifications en cours dans dépot git sans les commit. Cela permet par exemple de changer de branche sans perdre
+            les modifications.
+        </p>
+            <h2>Options du git stash :</h2>
+            <ul>
+                <li>git stash <strong>list</strong> : Affiche la liste des stashs enregistrés</li>
+                <li>git stash <strong>appply</strong> : Restaure les modifications du dernier stash sans les supprimer de la liste</li>
+                <li>git stash <strong>pop</strong> : Restaure les modifications du dernier stash et les supprime de la liste</li>
+                <li>git stash <strong>drop</strong> : Supprime un stash</li>
+                <li>git stash <strong>clear</strong> : Supprime tous les stash</li>
+                <li>git stash <strong>push</strong> : Permet de stash uniquement certains fichiers</li>
+            </ul>
+            <p>Exemple : <br>
+                Je travaille sur une branche "feature_1". J'ai fais des modifications mais je dois corriger un bug urgent sur le main.<br>
+                <div class="codeBox">
+                    <strong>git stash</strong><br>
+                    git checkout main<br>
+                    # Correction du bug... #<br>
+                    git commit -a -m "Correction du bug"<br>
+                    git push origin main<br>                    
+                </div>
+
+                <br>
+                Je reviens sur ma branche et je récupère mes modifications :<br>
+                <div class="codeBox">
+                    git checkout feature_1<br>
+                    <strong>git stash pop</strong> ou <strong>git stash apply</strong>                    
+                </div>
+
+            </p>        
+      </main>
+</body>
+</html>
