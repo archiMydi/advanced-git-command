@@ -39,9 +39,9 @@ header {
 }
 
 /* Conteneur principal */
-.container {
+.home-container {
   max-width: 800px;
-  margin: 30px auto;
+  margin: 70px auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
