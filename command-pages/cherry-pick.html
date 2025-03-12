@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation commandes avancées Git - cherry-pick</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a class="home-link" href="../index.html">Accueil</a>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <h1>git cherry-pick</h1>
+        <p>Permet de sélectionner un commit et de l'appliquer à une autre branche</p>
+        <br>
+        <h4>Utilisation :</h4>
+        <p>git cherry-pick < commit ></p>
+        <br>
+        <h4>Options :</h4>
+        <ul>
+            <li>-edit : Permet de modifier le message du nouveau commit (le message par défaut est celui du commit sélectionner)</li>
+            <li>--no-commit : déplace les changements du commit dans le répertoire de travail de la branche sélectionner sans faire un nouveau commit</li>
+            <li>--signoff : ajoute une signature de validation au message de commit</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
