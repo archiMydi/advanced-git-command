@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Documentation Git Reset</title>
+	</head>
+	<body>
+		<style>
+			.mb-1 {
+				margin-bottom: 0.25rem;
+			}
+			.mb-2 {
+				margin-bottom: 0.5rem;
+			}
+			.mb-3 {
+				margin-bottom: 1rem;
+			}
+			.mb-4 {
+				margin-bottom: 2rem;
+			}
+			.mb-5 {
+				margin-bottom: 4rem;
+			}
+			code {
+				background-color: #f5f6f7;
+				padding: 2.5px 5px;
+				word-break: keep-all;
+			}
+			.list {
+				list-style: circle;
+				margin-left: 1.5rem;
+			}
+		</style>
+		<header>
+			<div class="header-container">
+				<a class="home-link" href="../index.html">Accueil</a>
+			</div>
+		</header>
+		<main>
+			<div class="container" style="text-align: left">
+				<h1 class="mb-3">Documentation de la commande Git Reset</h1>
+				<p class="mb-4">
+					La commande
+					<code>git reset</code>
+					est utilisée pour annuler des changements dans le dépôt. Elle peut réinitialiser
+					l'index et/ou la branche courante à un état précédent.
+				</p>
+
+				<h2 class="mb-1">
+					Fonctionnement de
+					<code>git reset</code>
+				</h2>
+				<p class="mb-4">
+					<code>git reset</code>
+					modifie l'état de la branche courante en déplaçant le pointeur HEAD et, selon
+					les options utilisées, peut également modifier l'index (staging area) et le
+					répertoire de travail (working directory).
+				</p>
+
+				<h2 class="mb-1">
+					Options de
+					<code>git reset</code>
+				</h2>
+				<ul class="mb-4">
+					<li class="mb-3">
+						<strong>
+							<code>--soft</code>
+						</strong>
+						<ul class="list mb-3">
+							<li>Déplace le HEAD vers le commit spécifié.</li>
+							<li>
+								Les changements dans l'index et le répertoire de travail ne sont pas
+								modifiés.
+							</li>
+							<li>
+								Utilisé pour annuler des commits tout en conservant les changements
+								dans l'index et le répertoire de travail.
+							</li>
+						</ul>
+						<pre><code>git reset --soft &lt;commit&gt;</code></pre>
+					</li>
+					<li class="mb-3">
+						<strong>
+							<code>--mixed</code>
+						</strong>
+						(par défaut) :
+						<ul class="list mb-3">
+							<li>Déplace le HEAD vers le commit spécifié.</li>
+							<li>Réinitialise l'index pour qu'il corresponde au commit spécifié.</li>
+							<li>
+								Les changements dans le répertoire de travail ne sont pas modifiés.
+							</li>
+							<li>Utilisé pour annuler des commits et désindexer les changements.</li>
+						</ul>
+						<pre><code>git reset --mixed &lt;commit&gt;</code></pre>
+					</li>
+					<li class="mb-3">
+						<strong>
+							<code>--hard</code>
+						</strong>
+						:
+						<ul class="list mb-3">
+							<li>Déplace le HEAD vers le commit spécifié.</li>
+							<li>
+								Réinitialise l'index et le répertoire de travail pour qu'ils
+								correspondent au commit spécifié.
+							</li>
+							<li>
+								Tous les changements dans l'index et le répertoire de travail sont
+								perdus.
+							</li>
+							<li>
+								Utilisé pour annuler des commits et supprimer tous les changements
+								locaux.
+							</li>
+						</ul>
+						<pre><code>git reset --hard &lt;commit&gt;</code></pre>
+					</li>
+				</ul>
+
+				<h2 class="mb-1">Exemples d'utilisation</h2>
+				<ul class="list mb-4">
+					<li class="mb-3">
+						Pour annuler le dernier commit mais conserver les changements dans l'index
+						et le répertoire de travail :
+						<pre><code>git reset --soft HEAD~1</code></pre>
+					</li>
+					<li class="mb-3">
+						Pour annuler le dernier commit et désindexer les changements:
+						<pre><code>git reset --mixed HEAD~1</code></pre>
+					</li>
+					<li class="mb-3">
+						Pour annuler le dernier commit et supprimer tous les changements locaux :
+						<pre><code>git reset --hard HEAD~1</code></pre>
+					</li>
+				</ul>
+
+				<h2>Conclusion</h2>
+				<p>
+					<code>git reset</code>
+					est une commande puissante qui doit être utilisée avec précaution, surtout avec
+					l'option
+					<code>--hard</code>
+					, car elle peut entraîner la perte de données non sauvegardées.
+				</p>
+			</div>
+		</main>
+	</body>
+</html>
