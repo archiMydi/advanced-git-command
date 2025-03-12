@@ -1,0 +1,135 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../style.css" />
+		<title>Documentation Git Revert</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				line-height: 1.6;
+			}
+			footer {
+				text-align: center;
+			}
+			main {
+				padding: 1em;
+			}
+			pre {
+				background: #f4f4f4;
+				padding: 10px;
+				border-radius: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="header-container">
+				<a class="home-link" href="../index.html">Accueil</a>
+			</div>
+		</header>
+
+		<h1>Documentation Git Revert</h1>
+
+		<main>
+			<section>
+				<h2>Introduction</h2>
+				<p>
+					La commande
+					<code>git revert</code>
+					permet d'annuler un commit en créant un nouveau commit qui inverse les
+					modifications apportées par le commit ciblé.
+				</p>
+			</section>
+			<section>
+				<h2>Utilisation</h2>
+				<p>Pour annuler un commit spécifique, utilisez :</p>
+				<pre><code>git revert &lt;commit_hash&gt;</code></pre>
+				<p>
+					Cette commande ouvre l'éditeur de message de commit pour confirmer ou modifier
+					le message.
+				</p>
+
+				<h2>Options</h2>
+				<ul>
+					<li>
+						<code>-n</code>
+						/
+						<code>--no-commit</code>
+						: Applique l'inversion sans créer immédiatement un commit.
+					</li>
+					<li>
+						<code>-e</code>
+						/
+						<code>--edit</code>
+						: Ouvre l'éditeur pour modifier le message du commit.
+					</li>
+					<li>
+						<code>--no-edit</code>
+						: Exécute la réversion sans ouvrir l'éditeur.
+					</li>
+					<li>
+						<code>--mainline &lt;num&gt;</code>
+						: Utile pour les merges, spécifie le parent à conserver.
+					</li>
+					<li>
+						<code>--strategy &lt;strat&gt;</code>
+						: Définit la stratégie de merge en cas de conflits.
+					</li>
+					<li>
+						<code>--abort</code>
+						: Annule une réversion en cours.
+					</li>
+					<li>
+						<code>--continue</code>
+						: Finalise une réversion après résolution des conflits.
+					</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Avantages</h2>
+				<ul>
+					<li>Préserve l'historique des commits</li>
+					<li>Idéal pour annuler des modifications dans un dépôt partagé</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Inconvénients</h2>
+				<ul>
+					<li>Création d'un vouveau commit qui peut encombrer l'historique</li>
+					<li>
+						Si le commit à annuler est ancien, il peut générer des conflits avec les
+						modifications plus récentes
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Exemple</h2>
+				<p>
+					Pour annuler le commit
+					<code>abc1234</code>
+					:
+				</p>
+				<pre><code>git revert abc1234</code></pre>
+				<p>Pour annuler le commit le dernier commit :</p>
+				<pre><code>git revert HEAD</code></pre>
+			</section>
+			<section>
+				<h2>Résumé</h2>
+				<p>
+					La commande
+					<code>git revert</code>
+					annule des modifications en créant un nouveau commit qui inverse les changements
+					spécifiés. Contrairement à
+					<code>git reset</code>
+					, elle ne supprime pas les commits et préserve l'historique, ce qui en fait une
+					méthode plus sûre pour éviter la perte de travail.
+				</p>
+			</section>
+		</main>
+		<footer>
+			<p>© 2025 - hugolgle - Documentation Git Revert</p>
+		</footer>
+	</body>
+</html>

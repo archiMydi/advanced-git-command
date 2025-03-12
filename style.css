@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style global */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 20px;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.home-link {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.home-link:hover {
+  color: #007bff;
+}
+
+/* Conteneur principal */
+.home-container {
+  max-width: 800px;
+  margin: 70px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Titres */
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Liste des commandes */
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #0056b3;
+}
+#stashMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#stashMain p {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+#stashMain .codeBox {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 25px;
+  border: solid 1px black;
+  border-radius: 20px;
+}
